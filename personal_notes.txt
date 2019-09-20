@@ -40,3 +40,30 @@ Epoch 2/5.. Train loss: 0.947.. Validation loss: 1.304.. Validation accuracy: 0.
 
 
 
+def save_check_point(model, optimizer, check_point_file):
+    check_point = {
+        'model': {
+            'classifier': {
+                'input_units': input_units,
+                'hidden_1_units': hidden_1_units,
+                'hidden_2_units': hidden_2_units,
+                'output_units': output_units,
+                'dropout': dropout
+            },
+            'epochs_done': model.epochs_done,
+            'state_dict': model.state_dict(),
+            'class_to_idx': model.class_to_idx
+         },
+        'optimizer': {
+            'learning_rate': optimizer.lr,
+            'state_dict': optimizer.state_dict
+        }
+    }
+
+    porch.save(check_point, file)
+
+
+
+
+
+

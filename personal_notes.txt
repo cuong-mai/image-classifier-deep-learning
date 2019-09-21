@@ -65,5 +65,6 @@ def save_check_point(model, optimizer, check_point_file):
 
 
 
-
+[[ 0.01179462  0.01164981  0.01151799  0.01141072  0.01133208]]
+[[59 53 40 28 63]]
 

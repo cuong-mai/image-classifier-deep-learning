@@ -12,6 +12,7 @@ device = device(args.gpu)
 model, optimizer = load_check_point(args.check_point_file, device)
 criterion = build_nllloss_criterion()
 
+# Predict and print result
 top_ps, top_classes = predict(image_file=args.image_file, model=model, device=device, topk=args.topk)
 print_predict_result(top_ps, top_classes, args.cat_to_name_file)
 
